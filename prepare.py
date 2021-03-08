@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-###################### Clean Telco Data ######################
+########################### Clean Telco Data ############################
 
 def clean_telco(df):
     '''
@@ -11,7 +11,7 @@ def clean_telco(df):
     shorten column names
     encode yes/no/no ___ columns
     fill in missing values
-    replace total_charges missing values and convert to float
+    replace missing values from total_charges and convert to float
     create dummy variable for gender, rename dummy column, and add to original df
     adjust values
     drop redundant columns
@@ -106,7 +106,7 @@ def clean_telco(df):
 
 
 
-###################### Generic Split Function ######################
+########################### Generic Split Function ############################
 
 
 def split(df, stratify_by=None):
