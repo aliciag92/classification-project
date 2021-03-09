@@ -14,6 +14,7 @@ def clean_telco(df):
     replace missing values from total_charges and convert to float
     create dummy variable for gender, rename dummy column, and add to original df
     adjust values
+    combine/create new features
     drop redundant columns
     set floats to integers (except monthly/total charges)
     
@@ -91,14 +92,27 @@ def clean_telco(df):
                                        'Credit card (automatic)': 1})
 
 
+    #combine/create new features
+    df['streaming_services'] = df['streaming_tv'] + df['streaming_movies']
+    df['add_ons'] = df['online_security'] + df['online_backup'] + df['device_protection'] + df['tech_support']  
+
+
     #drop redundant columns
-    df = df.drop(columns=['payment_type', 'internet_type', 'contract', 'gender'])
+    df = df.drop(columns=['payment_type', 
+                      'internet_type', 
+                      'contract', 
+                      'gender', 
+                      'streaming_tv',
+                      'streaming_movies',
+                      'online_security',
+                      'online_backup',
+                      'device_protection',
+                      'tech_support'])
 
 
     #set floats to integers
     df.multiple_lines = df.multiple_lines.astype('int')
-    df.online_security = df.online_security.astype('int')
-    df.online_backup = df.online_backup.astype('int')
+    df.add_ons = df.add_ons.astype('int')
     
 
     return df
