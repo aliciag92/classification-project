@@ -1,4 +1,4 @@
-# Predicting customer churn at Telco
+# Burn the Telco Churn
 ****
 
 ## About the Project
