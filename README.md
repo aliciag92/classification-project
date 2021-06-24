@@ -1,6 +1,6 @@
 # Burn the Telco Churn
 ****
-
+![burnchurn](https://growtraffic-bc85.kxcdn.com/blog/wp-content/uploads/2015/11/Churn-and-Burn-Website.jpg)
 ## About the Project
 
 ****
